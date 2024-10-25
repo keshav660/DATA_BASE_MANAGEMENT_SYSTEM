@@ -1,0 +1,59 @@
+1. Add a new column to a table:
+ALTER TABLE student ADD (mobile NUMBER(10));
+(Adds a column named 'mobile' with a 10-digit number type to the 'student' table.)
+
+2. Create a view:
+CREATE VIEW Sales_View AS SELECT * FROM EMPLOYEES WHERE Employee_Id > 3;
+(Creates a view from the 'EMPLOYEES' table where Employee_Id is greater than 3.)
+
+3. Update records in a table:
+UPDATE EMPLOYEES SET Salary = Salary * 1.25;
+(Increases the salary of all employees by 25%.)
+
+4. Find max and min values in a table:
+SELECT MAX(Salary) AS Max_Salary, MIN(Salary) AS Min_Salary FROM EMPLOYEES;
+(Finds the maximum and minimum salary from the 'EMPLOYEES' table.)
+
+5. Sum and average of a column:
+SELECT SUM(Salary) AS Total_Salary, AVG(Salary) AS Average_Salary FROM EMPLOYEES;
+(Shows the total and average salary from the 'EMPLOYEES' table.)
+
+6. Order records:
+SELECT First_Name, Last_Name FROM EMPLOYEES ORDER BY Salary ASC;
+(Displays employee names in ascending order of salary.)
+
+7. Filter with conditions (WHERE):
+SELECT * FROM EMPLOYEES WHERE Salary >= 10000 AND EXTRACT(YEAR FROM SYSDATE) - EXTRACT(YEAR FROM Hire_Date) > 25;
+(Finds employees with salary ≥ 10,000 and more than 25 years of experience.)
+
+8. Delete column data (SET NULL):
+UPDATE EMPLOYEE SET Email = NULL WHERE E_name = 'James';
+(Removes the email of an employee named 'James'.)
+
+9. Delete records:
+DELETE FROM EMPLOYEES WHERE Hire_year < 1993;
+(Deletes employees hired before 1993.)
+
+10. Select with specific condition (LIKE, IN):
+SELECT First_Name, Last_Name FROM EMPLOYEES WHERE Department_Id IN (60, 70, 80);
+(Displays employees working in department 60, 70, or 80.)
+
+11. Find NULL values:
+SELECT * FROM EMP WHERE Name IS NULL;
+(Finds all records in the 'EMP' table where the 'Name' field is empty (NULL).)
+
+12. Update specific row:
+UPDATE EMPLOYEE SET E_address = 'Nagpur' WHERE Emp_no = 12;
+(Updates the address of employee number 12 to 'Nagpur'.)
+
+13. Create a table:
+CREATE TABLE EMPLOYEE (Emp_no NUMBER, E_name VARCHAR(50), Dept_no NUMBER);
+(Creates a table named 'EMPLOYEE' with Emp_no, E_name, and Dept_no columns.)
+
+14. Find second highest salary (subquery):
+SELECT MAX(Salary) FROM EMPLOYEES WHERE Salary < (SELECT MAX(Salary) FROM EMPLOYEES);
+(Finds the second highest salary from the 'EMPLOYEES' table.)
+
+15. View records matching a pattern:
+SELECT * FROM EMPLOYEES WHERE Last_Name LIKE 'A%';
+(Finds employees whose last name starts with 'A'.)
